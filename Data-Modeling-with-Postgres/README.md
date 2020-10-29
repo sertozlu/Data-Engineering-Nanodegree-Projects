@@ -46,6 +46,8 @@ Using the song and log datasets, I created a star schema optimized for queries o
 
 ## Project Files
 
+```sql_queries.py``` -> Contains SQL queries for dropping and creating fact and dimension tables.
+
 ```create_tables.py``` -> Drops and creates tables. Run this file to reset tables before each time running the ETL scripts.
 
 ```etl.ipynb``` -> Reads and processes a single file from song_data and log_data and loads the data into tables.  
@@ -54,13 +56,9 @@ Using the song and log datasets, I created a star schema optimized for queries o
 
 ```test.ipynb``` -> notebook that displays the first few rows of each table to validate data loaded
 
-```sql_queries.py``` -> Contains SQL queries for dropping and creating fact and dimension tables.
-
 ## How to run
 
 Evironment should have Python with [psycopg](http://initd.org/psycopg/docs/) and [PostgreSQL](https://www.postgresql.org/docs/) installed. 
-
-To run the main program: ```python main.py``` 
 
 To create tables: ```python create_tables.py``` 
 

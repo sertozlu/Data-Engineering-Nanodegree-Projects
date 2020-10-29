@@ -52,13 +52,13 @@ time_table_create = ("""
 
 songplay_table_create = ("""
 	CREATE TABLE IF NOT EXISTS songplays (
-		songplay_id SERIAL PRIMARY KEY,
+		songplay_id INT PRIMARY KEY,
 		start_time TIMESTAMP REFERENCES time(start_time),
 		user_id INT NOT NULL REFERENCES users(user_id),
 		level VARCHAR,
 		song_id VARCHAR REFERENCES songs(song_id),
 		artist_id VARCHAR REFERENCES artists (artist_id),
-		session_id INT NOT NULL,
+		session_id INT,
 		location VARCHAR,
 		user_agent TEXT
 	)
@@ -67,9 +67,9 @@ songplay_table_create = ("""
 # INSERT RECORDS
 
 songplay_table_insert = ("""
-	INSERT INTO songplays (start_time, user_id, level, song_id, 
+	INSERT INTO songplays (songplay_id, start_time, user_id, level, song_id, 
 		artist_id, session_id, location, user_agent)
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
     ON CONFLICT DO NOTHING
 """)
 
@@ -86,7 +86,7 @@ song_table_insert = ("""
 """)
 
 artist_table_insert = ("""
-	INSERT INTO artists (artist_id, name, location, lattitude, longitude)
+	INSERT INTO artists (artist_id, name, location, latitude, longitude)
     VALUES (%s, %s, %s, %s, %s)
     ON CONFLICT (artist_id) DO NOTHING
 """)
@@ -101,10 +101,10 @@ time_table_insert = ("""
 # FIND SONGS
 
 song_select = ("""
-	SELECT song_id, artists.artist_id
-    FROM songs 
-    JOIN artists ON songs.artist_id = artists.artist_id
-    WHERE songs.title = %s AND artists.name = %s AND songs.duration = %s
+	SELECT s.song_id, a.artist_id
+    FROM songs s
+    JOIN artists a ON s.artist_id = a.artist_id
+    WHERE s.title = %s AND a.name = %s AND s.duration = %s
 """)
 
 # QUERY LISTS
