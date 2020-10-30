@@ -31,7 +31,7 @@ log_data/2018/11/2018-11-13-events.json
 Using the song and log datasets, I created a star schema optimized for queries on song play analysis. This includes the following tables.
 
 ### Fact Table
-1. songplays - records in log data associated with song plays i.e. records with page `NextSong`
+1. <b>songplays</b> - records in log data associated with song plays i.e. records with page `NextSong`
     * songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
 
 ### Dimension Tables
