@@ -62,24 +62,8 @@ Using the song and event datasets, I created a star schema optimized for queries
 
 ## How to run
 
-Launch a Redshift cluster in AWS and configure it per below dwh.cfg file.
-```
-[CLUSTER]
-HOST=''
-DB_NAME=''
-DB_USER=''
-DB_PASSWORD=''
-DB_PORT=5439
-
-[IAM_ROLE]
-ARN=<IAM Role arn>
-
-[S3]
-LOG_DATA='s3://udacity-dend/log_data'
-LOG_JSONPATH='s3://udacity-dend/log_json_path.json'
-SONG_DATA='s3://udacity-dend/song_data'
-
-``` 
+Launch a Redshift cluster in AWS and configure it by adding required information into ```dwh.cfg``` file.
 
 To create tables: ```python create_tables.py``` 
+Test by running ```etl.py``` after running ```create_tables.py``` and running the analytic queries on your Redshift database to compare your results with the expected results.
 
