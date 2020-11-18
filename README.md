@@ -10,3 +10,6 @@ Apply data modeling with Apache Cassandra and complete an ETL pipeline using Pyt
 ## Project 3: [Data Warehouse](https://github.com/sertozlu/Data-Engineering-Nanodegree-Projects/tree/master/Data-Warehouse)
 Apply data warehousing models and architectures to build an ETL pipeline for a database hosted on AWS Redshift. Load data from S3 to staging tables on Redshift and execute SQL statements that create the analytics tables from these staging tables.
 
+## Project 4: [Data Lake](https://github.com/sertozlu/Data-Engineering-Nanodegree-Projects/tree/master/Data-Lake)
+Use Spark (AWS EMR-based) to build an ETL pipeline for a data lake hosted on S3. Load data from S3, process the data into analytics tables using Spark, and load them back into S3. Deploy this Spark process on a cluster using AWS.
+
