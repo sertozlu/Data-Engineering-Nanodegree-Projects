@@ -13,3 +13,5 @@ Apply data warehousing models and architectures to build an ETL pipeline for a d
 ## Project 4: [Data Lake](https://github.com/sertozlu/Data-Engineering-Nanodegree-Projects/tree/master/Data-Lake)
 Use Spark (AWS EMR-based) to build an ETL pipeline for a data lake hosted on S3. Load data from S3, process the data into analytics tables using Spark, and load them back into S3. Deploy this Spark process on a cluster using AWS.
 
+## Project 5: [Data Pipelines](https://github.com/sertozlu/Data-Engineering-Nanodegree-Projects/tree/master/Data-Pipelines)
+Use Apache Airflow to introduce more automation and monitoring to data warehouse ETL pipelines. Create a high grade data pipelines that are dynamic and built from reusable tasks, can be monitored, and allow easy backfills. Ensure data quality by running tests against datasets after the ETL steps have been executed to catch any discrepancies in the datasets.
